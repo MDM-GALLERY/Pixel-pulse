@@ -507,18 +507,24 @@
   
   document.querySelector('.btn-buy').addEventListener('click', function(e) {
     e.preventDefault();
-    Paddle.Checkout.open({
-  items: [
-    {
-      priceId: 'pri_01m0f517adf2fmp5xqh9n1v8e4',
-      quantity: 1
+    
+    try {
+      Paddle.Checkout.open({
+        items: [
+          {
+            priceId: 'pri_01m0f517adf2fmp5xqh9n1v8e4',
+            quantity: 1
+          }
+        ],
+        settings: {
+          successUrl: 'https://pixel-pulse-lovat.vercel.app/merci.html'
+        }
+      });
+    } catch (err) {
+      console.error("Erreur Paddle:", err);
+      // Fallback de secours si le JS bloque : rediriger vers un lien de paiement direct si besoin
     }
-  ],
-  settings: {
-    successUrl: 'https://pixel-pulse-lovat.vercel.app/merci.html'
-  }
-});
-
+  });
 </script>
 </body>
 </html>
