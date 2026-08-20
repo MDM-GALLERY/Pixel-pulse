@@ -505,10 +505,9 @@
     token: 'live_0478b9c148bf86a2d2012abed1a' 
   });
   
-  document.querySelector('.btn-buy').addEventListener('click', function(e) {
-    e.preventDefault();
-    
-    try {
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('btn-buy')) {
+      e.preventDefault();
       Paddle.Checkout.open({
         items: [
           {
@@ -520,11 +519,9 @@
           successUrl: 'https://pixel-pulse-lovat.vercel.app/merci.html'
         }
       });
-    } catch (err) {
-      console.error("Erreur Paddle:", err);
-      // Fallback de secours si le JS bloque : rediriger vers un lien de paiement direct si besoin
     }
   });
 </script>
+
 </body>
 </html>
