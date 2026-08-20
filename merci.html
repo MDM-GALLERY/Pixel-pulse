@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci pour votre achat — Pixel & Pulse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0C0D10;
+    --surface:#15161A;
+    --surface-line:#232429;
+    --text:#EDEAE3;
+    --text-dim:#8B8B92;
+    --amber:#E8A33D;
+    --amber-soft:rgba(232,163,61,0.14);
+    --cyan:#4FD1C5;
+    --radius:14px;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{
+    max-width:680px;
+    margin:auto;
+    padding:40px 24px;
+    text-align:center;
+  }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:24px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 8px 1px var(--cyan);
+  }
+
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(32px, 5vw, 44px);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    margin:0 0 16px;
+  }
+
+  p{
+    color:var(--text-dim);
+    font-size:16px;
+    margin:0 0 36px;
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--surface-line);
+    border-radius:var(--radius);
+    padding:32px;
+    margin-bottom:32px;
+    text-align:left;
+  }
+
+  .card h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:18px;
+    font-weight:600;
+    margin:0 0 10px;
+    color:var(--text);
+  }
+
+  .card p{
+    font-size:14.5px;
+    margin:0;
+  }
+
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 30px;
+    border-radius:999px;
+    background:var(--amber);
+    color:#141414;
+    font-weight:500;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px -8px rgba(232,163,61,0.55);
+  }
+
+  footer{
+    padding:24px 0;
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--text-dim);
+    border-top:1px solid var(--surface-line);
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <span class="eyebrow">Paiement validé avec succès</span>
+    <h1>Merci pour votre confiance !</h1>
+    <p>Votre transaction a bien été enregistrée par Paddle.</p>
+
+    <div class="card">
+      <h2>Statut de livraison : Éclipse Clock</h2>
+      <p>Notre widget est actuellement en cours de finalisation pour vous offrir une expérience parfaite. Votre package exclusif vous sera envoyé par e-mail dès sa sortie officielle dans les tout prochains jours.</p>
+    </div>
+
+    <a class="btn" href="index.html">
+      Retourner à l'accueil
+    </a>
+  </div>
+
+  <footer>
+    Pixel &amp; Pulse © 2026. Tous droits réservés.
+  </footer>
+</body>
+</html>
