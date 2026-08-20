@@ -385,6 +385,9 @@
   }
   .secure-badge svg{ width:13px; height:13px; color:var(--text-dim); }
 </style>
+
+<!-- Importation du script Paddle.js -->
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 </head>
 <body>
 
@@ -408,7 +411,6 @@
 
     <div class="signature" aria-hidden="true">
       <svg viewBox="0 0 220 220">
-        <!-- tick marks -->
         <g>
           <line class="tick major" x1="110" y1="14" x2="110" y2="26"/>
           <line class="tick" x1="164" y1="28" x2="158" y2="38"/>
@@ -497,11 +499,12 @@
     </span>
   </div>
 </footer>
-  
+
 <script>
   Paddle.Initialize({ 
-    token: 'live_0478b9c148bf86a2d2012abed1a'
+    token: 'live_0478b9c148bf86a2d2012abed1a' 
   });
+  
   document.querySelector('.btn-buy').addEventListener('click', function(e) {
     e.preventDefault();
     Paddle.Checkout.open({
