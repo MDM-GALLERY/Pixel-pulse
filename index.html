@@ -452,8 +452,7 @@
         </div>
         <div class="product-footer">
           <span class="price">13<sup>USD</sup></span>
-          <<a href="https://buy.paddle.com/checkout?prices=pri_01m0f517adf2fmp5xqh9n1v8e4" class="btn-buy">Acheter</a>
->
+          <<button class="btn-buy" type="button">Acheter</button>
         </div>
       </article>
 
@@ -498,6 +497,21 @@
     </span>
   </div>
 </footer>
-
+<script>
+  Paddle.Initialize({ 
+    token: live_0478b9c148bf86a2d2012abed1a 
+  });
+  document.querySelector('.btn-buy').addEventListener('click', function(e) {
+    e.preventDefault();
+    Paddle.Checkout.open({
+      items: [
+        {
+          priceId: 'pri_01m0f517adf2fmp5xqh9n1v8e4',
+          quantity: 1
+        }
+      ]
+    });
+  });
+</script>
 </body>
 </html>
