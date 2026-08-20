@@ -585,18 +585,14 @@
   };
 
   function setLanguage(lang) {
-    // Sauvegarde la préférence dans le localStorage
     localStorage.setItem('preferred_lang', lang);
     document.getElementById('html-root').setAttribute('lang', lang);
 
-    // Met à jour l'état actif des boutons du sélecteur
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-    // Met à jour le titre de la page
     document.getElementById('meta-title').innerText = translations[lang].metaTitle;
 
-    // Met à jour tous les éléments possédant l'attribut data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (translations[lang][key]) {
@@ -605,20 +601,16 @@
     });
   }
 
-  // --- Logique de détection automatique de la langue au chargement ---
   (function initLanguage() {
-    // 1. Vérifie si l'utilisateur a déjà fait un choix manuel lors d'une visite précédente
     const savedLang = localStorage.getItem('preferred_lang');
     if (savedLang && translations[savedLang]) {
       setLanguage(savedLang);
       return;
     }
 
-    // 2. Sinon, détection automatique via le navigateur (navigator.language)
     const browserLang = navigator.language || navigator.userLanguage || 'fr';
     const primaryLang = browserLang.toLowerCase().substring(0, 2);
 
-    // Si le navigateur est en anglais, on applique l'anglais, sinon par défaut le français
     if (primaryLang === 'en') {
       setLanguage('en');
     } else {
@@ -634,7 +626,14 @@
   document.addEventListener('click', function(e) {
     if (e.target && e.target.classList.contains('btn-buy')) {
       e.preventDefault();
+      
+      // Récupère la langue actuellement active sur le site ('fr' ou 'en')
+      const currentLang = localStorage.getItem('preferred_lang') || 'fr';
+
       Paddle.Checkout.open({
+        settings: {
+          locale: currentLang // Force le checkout Paddle à utiliser la même langue !
+        },
         items: [
           {
             priceId: 'pri_01m0f517adf2fmp5xqh9n1v8e4',
