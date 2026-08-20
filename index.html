@@ -538,7 +538,6 @@
     </span>
   </div>
 </footer>
-
 <script>
   // Dictionnaire de traduction i18n
   const translations = {
@@ -631,9 +630,6 @@
       const currentLang = localStorage.getItem('preferred_lang') || 'fr';
 
       Paddle.Checkout.open({
-        settings: {
-          locale: currentLang // Force le checkout Paddle à utiliser la même langue !
-        },
         items: [
           {
             priceId: 'pri_01m0f517adf2fmp5xqh9n1v8e4',
@@ -641,12 +637,12 @@
           }
         ],
         settings: {
+          locale: currentLang, // Forcera bien la langue ('en' ou 'fr')
           successUrl: 'https://pixel-pulse-lovat.vercel.app/merci.html'
         }
       });
     }
   });
 </script>
-
 </body>
 </html>
