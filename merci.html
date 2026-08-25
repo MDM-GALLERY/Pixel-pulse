@@ -5,33 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Thank you for your purchase — Pixel & Pulse">
 <title>Thank You — Pixel & Pulse</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
-  :root{--bg:#0C0D10;--surface:#15161A;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;}
+  :root{--bg:#0C0D10;--surface:#15161A;--surface-hover:#1C1D23;--surface-line:#232429;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--amber-soft:rgba(232,163,61,0.12);--green:#34C759;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
-  .card{background:var(--surface);border:1px solid #232429;border-radius:16px;padding:48px 40px;max-width:480px;width:100%;}
-  .check{width:64px;height:64px;background:rgba(52,199,89,0.15);color:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 24px;}
-  h1{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-bottom:12px;}
-  p{color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:32px;}
-  .btn{background:var(--amber);color:#141414;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;text-decoration:none;padding:14px 28px;border-radius:999px;display:inline-block;transition:transform .2s;}
-  .btn:hover{transform:translateY(-2px);}
-  .email{color:var(--amber);font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:20px;}
-  .divider{height:1px;background:#232429;margin:28px 0;}
-  .note{font-size:13px;color:var(--text-dim);}
+  .card{background:var(--surface);border:1px solid var(--surface-line);border-radius:20px;padding:52px 40px;max-width:520px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+  .check{width:72px;height:72px;background:rgba(52,199,89,0.12);color:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 28px;box-shadow:0 0 30px rgba(52,199,89,0.15);}
+  h1{font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;margin-bottom:14px;letter-spacing:-0.01em;}
+  .subtitle{color:var(--text-dim);font-size:15px;line-height:1.7;margin-bottom:36px;}
+  .post-links{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+  .post-link{display:flex;align-items:center;gap:16px;background:var(--surface-hover);border:1px solid var(--surface-line);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--text);transition:all .2s ease;text-align:left;}
+  .post-link:hover{border-color:rgba(232,163,61,0.3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);}
+  .post-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+  .post-icon.doc{background:rgba(0,122,255,0.12);}
+  .post-icon.mail{background:rgba(232,163,61,0.12);}
+  .post-text{flex:1;}
+  .post-title{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:3px;}
+  .post-desc{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);}
+  .post-arrow{color:var(--text-dim);font-size:18px;transition:color .2s;}
+  .post-link:hover .post-arrow{color:var(--amber);}
+  .btn{background:var(--amber);color:#141414;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;text-decoration:none;padding:15px 32px;border-radius:999px;display:inline-block;transition:all .2s ease;letter-spacing:0.02em;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(232,163,61,0.3);}
+  .divider{height:1px;background:var(--surface-line);margin:28px 0;}
+  .note{font-size:13px;color:var(--text-dim);line-height:1.6;}
   .note strong{color:var(--text);}
+  .email{color:var(--amber);font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:16px;display:inline-block;}
+  .email:hover{text-decoration:underline;}
+  @media(max-width:480px){.card{padding:36px 24px;}.post-link{padding:14px 16px;}}
 </style>
 </head>
 <body>
   <div class="card">
     <div class="check">✓</div>
     <h1>Thank you for your purchase!</h1>
-    <p>Your GroceryTasks Pro template is being prepared. You will receive an email with the download link in the next few minutes.</p>
+    <p class="subtitle">Your GroceryTasks Pro template is being prepared. You will receive an email with the download link in the next few minutes.</p>
+
+    <div class="post-links">
+      <a href="https://pixel-pulse-lovat.vercel.app" class="post-link" target="_blank" rel="noopener">
+        <div class="post-icon doc">📚</div>
+        <div class="post-text">
+          <div class="post-title">Documentation & Support</div>
+          <div class="post-desc">pixel-pulse-lovat.vercel.app</div>
+        </div>
+        <span class="post-arrow">›</span>
+      </a>
+      <a href="mailto:cashguardtx@gmail.com?subject=GroceryTasks%20Pro%20Support" class="post-link">
+        <div class="post-icon mail">✉️</div>
+        <div class="post-text">
+          <div class="post-title">Email Support (30 days)</div>
+          <div class="post-desc">cashguardtx@gmail.com</div>
+        </div>
+        <span class="post-arrow">›</span>
+      </a>
+    </div>
+
     <a href="/" class="btn">Back to Home</a>
     <div class="divider"></div>
     <p class="note">Did not receive the email? Check your spam folder or contact us at <strong>cashguardtx@gmail.com</strong></p>
-    <p class="email">cashguardtx@gmail.com</p>
+    <a href="mailto:cashguardtx@gmail.com" class="email">cashguardtx@gmail.com</a>
   </div>
 </body>
 </html>
