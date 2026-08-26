@@ -145,13 +145,12 @@
             <span class="ph-tab inactive">Tasks</span>
           </div>
           <div class="ph-cat">🍎 Fruits & Vegetables</div>
-          <div class="ph-item"><span>•</span><span class="n">Apples</span><span class="q">x1</span></div>
-          <div class="ph-cat">🥩 Meat & Fish</div>
-          <div class="ph-item"><span>•</span><span class="n">Salmon</span><span class="q">x2</span></div>
-          <div class="ph-cat">🥛 Dairy</div>
-          <div class="ph-item"><span>•</span><span class="n">Milk</span><span class="q">x2</span></div>
+          <div class="ph-item"><span>•</span><span class="n">Chocolate</span><span class="q">Qty: 3</span></div>
+          <div class="ph-item"><span>•</span><span class="n">Apple</span><span class="q">Qty: 5</span></div>
           <div class="ph-cat">🥖 Bakery</div>
-          <div class="ph-item"><span>•</span><span class="n">Baguette</span><span class="q">x1</span></div>
+          <div class="ph-item"><span>•</span><span class="n">Éclairs</span><span class="q">Qty: 5</span></div>
+          <div class="ph-cat">🥩 Meat & Fish</div>
+          <div class="ph-item"><span>•</span><span class="n">Roast beef</span><span class="q">Qty: 1</span></div>
         </div>
       </div>
       <div class="phone">
@@ -161,13 +160,13 @@
             <span class="ph-tab inactive">Groceries</span>
             <span class="ph-tab active">Tasks</span>
           </div>
-          <div class="ph-cat">Today's Tasks</div>
-          <div class="ph-item"><span>☐</span><span class="n">Buy groceries</span></div>
-          <div class="ph-item"><span>☐</span><span class="n">Prepare meal plan</span></div>
-          <div class="ph-item"><span>☐</span><span class="n">Organize pantry</span></div>
+          <div class="ph-cat">To Do</div>
+          <div class="ph-item"><span>☐</span><span class="n">Midnight party</span></div>
+          <div class="ph-item"><span></span><span class="n">Grocery Store afternoon</span></div>
           <div class="ph-done">
-            <div class="ph-cat" style="color:#34C759;">✓ Completed</div>
-            <div class="ph-item"><span>✓</span><span class="n">Check inventory</span></div>
+            <div class="ph-cat" style="color:#34C759;">Completed</div>
+            <div class="ph-item"><span>✓</span><span class="n">Going biking with my son</span></div>
+            <div class="ph-item"><span>✓</span><span class="n">Buying an iPhone</span></div>
           </div>
         </div>
       </div>
@@ -188,7 +187,7 @@
         <p>Organized shopping sections with SF Symbols</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E3F2FD;color:#1565C0;">🗄️</div>
+        <div class="feat-icon" style="background:#E3F2FD;color:#1565C0;">️</div>
         <h3>SwiftData Integration</h3>
         <p>Native persistence layer with automatic sync</p>
       </div>
@@ -310,31 +309,79 @@
     </div>
     <div class="showcase-phone">
       <div class="sc-screen">
-        <div class="sc-header">GroceryTasks Pro <span>🔍</span></div>
+        <div class="sc-header">GroceryTasks <span></span></div>
         <div class="sc-tabs">
           <span class="sc-tab active">Groceries</span>
           <span class="sc-tab inactive">Tasks</span>
         </div>
-        <div class="sc-cat">
-          <div class="sc-cat-title">🍎 Fruits & Vegetables</div>
-          <div class="sc-item"><span class="sc-item-name">Apples</span><span class="sc-item-qty">x1</span></div>
+        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
+            <div style="flex:1;">
+              <div style="font-weight:600;font-size:14px;">Chocolate</div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Fruits & Vegetables • Qty: 3</div>
+            </div>
+          </div>
         </div>
-        <div class="sc-cat">
-          <div class="sc-cat-title">🥩 Meat & Fish</div>
-          <div class="sc-item"><span class="sc-item-name">Salmon</span><span class="sc-item-qty">x2</span></div>
+        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
+            <div style="flex:1;">
+              <div style="font-weight:600;font-size:14px;">Apple</div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Fruits & Vegetables • Qty: 5</div>
+            </div>
+          </div>
         </div>
-        <div class="sc-cat">
-          <div class="sc-cat-title">🥛 Dairy</div>
-          <div class="sc-item"><span class="sc-item-name">Milk</span><span class="sc-item-qty">x2</span></div>
+        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
+            <div style="flex:1;">
+              <div style="font-weight:600;font-size:14px;">Éclairs</div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Bakery • Qty: 5</div>
+            </div>
+          </div>
         </div>
-        <div class="sc-cat">
-          <div class="sc-cat-title">🥖 Bakery</div>
-          <div class="sc-item"><span class="sc-item-name">Baguette</span><span class="sc-item-qty">x1</span></div>
+        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
+            <div style="flex:1;">
+              <div style="font-weight:600;font-size:14px;">Roast beef</div>
+              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Meat & Fish • Qty: 1</div>
+            </div>
+          </div>
         </div>
         <div class="sc-purchased">
-          <div class="sc-purchased-title">✓ Purchased Items</div>
-          <div class="sc-item"><span class="sc-item-name">Bananas</span><span style="color:#34C759;">✓</span></div>
-          <div class="sc-item"><span class="sc-item-name">Chicken Breast</span><span style="color:#34C759;">✓</span></div>
+          <div class="sc-purchased-title">Purchased (3)</div>
+          <div class="sc-item" style="padding:8px 0;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">Coffee</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-item" style="padding:8px 0;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">1liter-coke</div>
+              </div>
+            </div>
+          </div>
+          <div class="sc-item" style="padding:8px 0;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">Banana</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -397,16 +444,16 @@
         <li>30-day email support</li>
       </ul>
       
-      <!-- LIEN SOLANA PAY EXACT AVEC USDC ET REDIRECTION -->
+      <!-- LIEN SOLANA PAY CORRIGÉ AVEC USDC -->
       <a href="solana:A8f6N7SQYm4gjm48QdnwLRpFyZvCdsB76LHSyQ3cqJJ5?amount=49&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&label=GroceryTasks%20Pro&message=Payment%20for%20GroceryTasks%20Pro%20Template&link=https://pixel-pulse-lovat.vercel.app/merci.html" class="pricing-btn" target="_blank">
-        ⚡ Pay with Solana Pay (USDC)
+        ⚡ Pay with Solana Pay (49 USDC)
       </a>
 
-      <!-- QR CODE POUR UTILISATEURS DESKTOP -->
+      <!-- QR CODE CORRIGÉ POUR UTILISATEURS DESKTOP -->
       <div class="qr-container">
         <p>Desktop user? Scan with your mobile wallet (Phantom/Solflare):</p>
         <div class="qr-code">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:A8f6N7SQYm4gjm48QdnwLRpFyZvCdsB76LHSyQ3cqJJ5?amount=49&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&label=GroceryTasks%20Pro&message=Payment%20for%20GroceryTasks%20Pro%20Template&link=https://pixel-pulse-lovat.vercel.app/merci.html" alt="Solana Pay QR Code">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:A8f6N7SQYm4gjm48QdnwLRpFyZvCdsB76LHSyQ3cqJJ5?amount=49&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&label=GroceryTasks%20Pro&message=Payment%20for%20GroceryTasks%20Pro%20Template&link=https://pixel-pulse-lovat.vercel.app/merci.html" alt="Solana Pay USDC QR Code">
         </div>
       </div>
 
@@ -414,7 +461,7 @@
         <div style="display: flex; gap: 12px; justify-content: center; font-size: 12px; color: var(--text-dim);">
           <span>🔒 0% Platform Fees</span>
           <span>⚡ Instant Settlement</span>
-          <span>🌐 Solana Network</span>
+          <span> Solana Network</span>
         </div>
         <span style="font-size: 11px; color: var(--text-dim); opacity: 0.7;">Funds go directly to your non-custodial wallet.</span>
       </div>
