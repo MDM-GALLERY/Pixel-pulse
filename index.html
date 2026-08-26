@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
-  :root{--bg:#0C0D10;--surface:#15161A;--surface-line:#232429;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--amber-soft:rgba(232,163,61,0.14);--cyan:#4FD1C5;--blue:#007AFF;--purple:#5856D6;--code-bg:#1E1E2E;--radius:14px;}
+  :root{--bg:#0C0D10;--surface:#15161A;--surface-line:#232429;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--amber-soft:rgba(232,163,61,0.14);--cyan:#4FD1C5;--blue:#007AFF;--purple:#5856D6;--code-bg:#1E1E2E;--radius:14px;--solana:#9945FF;}
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
@@ -65,7 +65,7 @@
   .kw{color:#C678DD;}.tp{color:#E06C75;}.pr{color:#61AFEF;}.cm{color:#5C6370;font-style:italic;}.st{color:#98C379;}
   .arch-arrow{color:var(--text-dim);font-size:20px;}.arch-split{display:flex;gap:16px;width:100%;justify-content:center;flex-wrap:wrap;}
   .arch-split .arch-box{max-width:250px;}
-  /* MONETIZATION — FOND NOIR ASSORTI */\n  #monetization{background:var(--bg);border-top:1px solid var(--surface-line);border-bottom:1px solid var(--surface-line);}
+  #monetization{background:var(--bg);border-top:1px solid var(--surface-line);border-bottom:1px solid var(--surface-line);}
   #monetization .section-title{color:var(--text);}.mono-sub{color:var(--text-dim);text-align:center;margin-bottom:40px;font-size:14px;}
   .mono-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto;}
   @media(max-width:768px){.mono-grid{grid-template-columns:1fr;}}
@@ -96,7 +96,8 @@
   .pricing-card{background:rgba(21,22,26,0.92);backdrop-filter:blur(20px);border:1px solid rgba(232,163,61,0.25);border-radius:24px;padding:48px 40px;max-width:440px;margin:0 auto;text-align:center;position:relative;z-index:1;box-shadow:0 20px 60px rgba(232,163,61,0.08);}
   .pricing-badge{display:inline-block;background:rgba(232,163,61,0.12);color:var(--amber);padding:5px 16px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
   .pricing-price{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:800;color:var(--text);line-height:1;margin-bottom:4px;}
-  .pricing-price span{font-size:18px;font-weight:500;color:var(--text-dim);}.pricing-list{text-align:left;margin:32px 0;list-style:none;padding:0;}
+  .pricing-price span{font-size:18px;font-weight:500;color:var(--text-dim);}
+  .pricing-list{text-align:left;margin:32px 0;list-style:none;padding:0;}
   .pricing-list li{padding:10px 0;font-size:14px;color:var(--text-dim);display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.04);}
   .pricing-list li::before{content:'✓';color:#34C759;font-weight:800;font-size:15px;}
   .pricing-btn{background:var(--amber);color:#000;border:none;padding:16px 48px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;cursor:pointer;width:100%;transition:all .2s ease;text-decoration:none;display:inline-block;}
@@ -391,12 +392,19 @@
         <li>Free lifetime updates</li>
         <li>30-day email support</li>
       </ul>
-      <a href="https://pixel-pulse.lemonsqueezy.com/checkout/buy/0ffb7c60-2af6-4a94-a063-f0a65a12c132" class="pricing-btn lemonsqueezy-button">
-        Buy Now
+      
+      <!-- REMPLACEZ "VOTRE_LIEN_DE_PAIEMENT_CRYPTO_ICI" PAR VOTRE VRAI LIEN (ex: PayGate.to) -->
+      <a href="VOTRE_LIEN_DE_PAIEMENT_CRYPTO_ICI" class="pricing-btn" target="_blank" style="background: var(--solana); color: white;">
+        Pay with USDC (Solana) — $49
       </a>
-      <div class="pricing-instant">
-        <span style="color:var(--amber);font-size:14px;">⚡</span>
-        Instant digital delivery
+      
+      <div class="pricing-instant" style="flex-direction: column; gap: 8px; margin-top: 16px;">
+        <div style="display: flex; gap: 12px; justify-content: center; font-size: 12px; color: var(--text-dim);">
+          <span>🔒 Non-custodial</span>
+          <span>⚡ Instant USDC</span>
+          <span>🌐 Solana Network</span>
+        </div>
+        <span style="font-size: 11px; color: var(--text-dim); opacity: 0.7;">No account required. Payment is verified on-chain.</span>
       </div>
     </div>
   </div>
@@ -406,10 +414,8 @@
   <div class="wrap footer-row">
     <span>Pixel & Pulse © 2026. All rights reserved.</span>
     <span>cashguardtx@gmail.com</span>
-    <span>Powered by LemonSqueezy</span>
   </div>
 </footer>
 
-<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </body>
 </html>
