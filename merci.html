@@ -8,30 +8,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
-  :root{--bg:#0C0D10;--surface:#15161A;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;}
+  :root{--bg:#0C0D10;--surface:#15161A;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--solana:#9945FF;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
-  .card{background:var(--surface);border:1px solid #232429;border-radius:16px;padding:48px 40px;max-width:480px;width:100%;}
+  .card{background:var(--surface);border:1px solid #232429;border-radius:16px;padding:48px 40px;max-width:520px;width:100%;}
   .check{width:64px;height:64px;background:rgba(52,199,89,0.15);color:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 24px;}
   h1{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-bottom:12px;}
-  p{color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:32px;}
+  p{color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:24px;}
   .btn{background:var(--amber);color:#141414;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;text-decoration:none;padding:14px 28px;border-radius:999px;display:inline-block;transition:transform .2s;}
   .btn:hover{transform:translateY(-2px);}
-  .email{color:var(--amber);font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:20px;}
+  .btn-download{background:var(--solana);color:white;font-weight:700;font-size:16px;padding:16px 32px;margin-bottom:24px;display:inline-block;}
+  .btn-download:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(153, 69, 255, 0.3);}
   .divider{height:1px;background:#232429;margin:28px 0;}
   .note{font-size:13px;color:var(--text-dim);}
   .note strong{color:var(--text);}
+  .wallet-address{background:#0C0D10;padding:10px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);word-break:break-all;margin-top:12px;border:1px solid #232429;}
 </style>
 </head>
 <body>
   <div class="card">
     <div class="check">✓</div>
-    <h1>Thank you for your purchase!</h1>
-    <p>Your GroceryTasks Pro template is being prepared. You will receive an email with the download link in the next few minutes.</p>
-    <a href="/" class="btn">Back to Home</a>
+    <h1>Payment Verified on Solana!</h1>
+    <p>Thank you for purchasing <strong>GroceryTasks Pro</strong>. Your USDC transaction has been confirmed on-chain.</p>
+    
+    <!-- LIEN DE TÉLÉCHARGEMENT DIRECT GOOGLE DRIVE -->
+    <a href="https://drive.google.com/file/d/1nxPO-6gh6pCPf26_aOIL6SuVSdRUI0n-/view?usp=sharing" class="btn btn-download" target="_blank">
+      📥 Download Template (.zip)
+    </a>
+
     <div class="divider"></div>
-    <p class="note">Did not receive the email? Check your spam folder or contact us at <strong>cashguardtx@gmail.com</strong></p>
-    <p class="email">cashguardtx@gmail.com</p>
+    
+    <p class="note">
+      <strong>Need help getting started?</strong><br>
+      Check the <code>README.md</code> included in the ZIP file for setup instructions.
+    </p>
+    
+    <div class="wallet-address">
+      Receiving Wallet: A8f6N7SQ...qJJ5 (Solana USDC)
+    </div>
+
+    <p class="note" style="margin-top: 24px;">
+      Questions? Contact us at <strong>cashguardtx@gmail.com</strong>
+    </p>
+    
+    <a href="/" class="btn" style="margin-top: 16px; background: transparent; border: 1px solid var(--surface-line); color: var(--text);">Back to Home</a>
   </div>
 </body>
 </html>
