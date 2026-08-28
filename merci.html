@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
-  :root{--bg:#0C0D10;--surface:#15161A;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--solana:#9945FF;}
+  :root{--bg:#0C0D10;--surface:#15161A;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--solana:#9945FF;--surface-line:#232429;}
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;}
-  .card{background:var(--surface);border:1px solid #232429;border-radius:16px;padding:48px 40px;max-width:520px;width:100%;}
+  .card{background:var(--surface);border:1px solid var(--surface-line);border-radius:16px;padding:48px 40px;max-width:520px;width:100%;}
   .check{width:64px;height:64px;background:rgba(52,199,89,0.15);color:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;margin:0 auto 24px;}
   h1{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-bottom:12px;}
   p{color:var(--text-dim);font-size:15px;line-height:1.6;margin-bottom:24px;}
@@ -19,10 +19,10 @@
   .btn:hover{transform:translateY(-2px);}
   .btn-download{background:var(--solana);color:white;font-weight:700;font-size:16px;padding:16px 32px;margin-bottom:24px;display:inline-block;}
   .btn-download:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(153, 69, 255, 0.3);}
-  .divider{height:1px;background:#232429;margin:28px 0;}
+  .divider{height:1px;background:var(--surface-line);margin:28px 0;}
   .note{font-size:13px;color:var(--text-dim);}
   .note strong{color:var(--text);}
-  .wallet-address{background:#0C0D10;padding:10px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);word-break:break-all;margin-top:12px;border:1px solid #232429;}
+  .wallet-address{background:#0C0D10;padding:10px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);word-break:break-all;margin-top:12px;border:1px solid var(--surface-line);}
   .info-box{background:rgba(153, 69, 255, 0.1);border:1px solid rgba(153, 69, 255, 0.3);border-radius:8px;padding:16px;margin-bottom:24px;text-align:left;}
   .info-box p{margin:0;font-size:14px;color:var(--text);}
 </style>
@@ -41,7 +41,6 @@
       3. Use the password to extract the files and check the <code>README.md</code> to get started!</p>
     </div>
 
-    <!-- LIEN DE TÉLÉCHARGEMENT DIRECT GOOGLE DRIVE OPTIMISÉ -->
     <a href="https://drive.google.com/uc?export=download&id=1thq4DazBLH-6qU98BHv0JpzDcUdWcLLT" class="btn btn-download" target="_blank">
       📥 Download Encrypted Template (.zip)
     </a>
@@ -53,8 +52,9 @@
     </div>
 
     <p class="note" style="margin-top: 24px;">
-      Didn't receive the password email within 4 hours?<br>
-      Check your spam folder or contact us directly at <strong>cashguardtx@gmail.com</strong>
+      Vous n'avez pas reçu l'email avec le mot de passe sous 4h ?<br>
+      Vérifiez vos spams ou contactez-nous directement sur X : 
+      <a href="https://x.com/PixelPulseIOS" target="_blank" style="color: var(--amber); text-decoration: none; font-weight: 600;">@PixelPulseIOS</a>
     </p>
     
     <a href="/" class="btn" style="margin-top: 16px; background: transparent; border: 1px solid var(--surface-line); color: var(--text);">Back to Home</a>
