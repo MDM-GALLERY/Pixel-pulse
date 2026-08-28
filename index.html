@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,7 +130,7 @@
       <span class="hero-badge">iOS 17+</span>
       <span class="hero-badge">SwiftUI</span>
       <span class="hero-badge">SwiftData</span>
-      <span class="hero-badge">MVVM</span>
+      <span class="hero-badge">@ModelActor</span>
     </div>
     <a href="#pricing" class="btn btn-primary">
       Get the Template — $49
@@ -182,84 +182,34 @@
     </div>
     <div class="features-grid">
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;">🛒</div>
-        <h3>8 Pre-configured Categories</h3>
-        <p>Organized shopping sections with SF Symbols</p>
+        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;">⚡</div>
+        <h3>@ModelActor Architecture</h3>
+        <p>Zero UI freeze, even with 10,000+ items. Thread-safe by design.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E3F2FD;color:#1565C0;">️</div>
-        <h3>SwiftData Integration</h3>
-        <p>Native persistence layer with automatic sync</p>
+        <div class="feat-icon" style="background:#E3F2FD;color:#1565C0;">🔄</div>
+        <h3>SwiftData Migrations</h3>
+        <p>VersionedSchema & MigrationPlan included. No data loss ever.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#F3E5F5;color:#6A1B9A;">🌙</div>
-        <h3>Dark Mode Support</h3>
-        <p>Adaptive UI themes for iOS dark mode</p>
+        <div class="feat-icon" style="background:#F3E5F5;color:#6A1B9A;">📱</div>
+        <h3>Swift Playgrounds Ready</h3>
+        <p>Optimized for iPad development. Copy, paste, and build.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon" style="background:#FFF3E0;color:#E65100;">✅</div>
-        <h3>Task Manager</h3>
-        <p>Full to-do functionality with completion tracking</p>
+        <h3>App Store Guideline 4.2</h3>
+        <p>Designed to be easily customized to avoid "minimum functionality" rejections.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E0F7FA;color:#00838F;">🏷️</div>
-        <h3>Category Organization</h3>
-        <p>Smart item grouping and filtering</p>
+        <div class="feat-icon" style="background:#E0F7FA;color:#00838F;">📚</div>
+        <h3>Weekend Launch Guide</h3>
+        <p>Step-by-step PDF from zero to App Store submission.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#FCE4EC;color:#C2185B;">➕</div>
-        <h3>Quick Add Function</h3>
-        <p>One-tap item and task entry</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="architecture">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Technical Design</span>
-      <h2 class="section-title" style="color:white;">Clean Architecture MVVM Pattern</h2>
-    </div>
-    <div class="arch-flow">
-      <div class="arch-box">
-        <h4>App.swift</h4>
-        <div class="code-line"><span class="kw">@main</span></div>
-        <div class="code-line"><span class="kw">struct</span> <span class="tp">GroceryTasksApp</span>: <span class="pr">App</span> {</div>
-        <div class="code-line">  <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">Scene</span> { ... }</div>
-        <div class="code-line">}</div>
-      </div>
-      <div class="arch-arrow">↓</div>
-      <div class="arch-box">
-        <h4>Models.swift</h4>
-        <div class="code-line"><span class="kw">@Model</span></div>
-        <div class="code-line"><span class="kw">class</span> <span class="tp">GroceryItem</span> {</div>
-        <div class="code-line">  <span class="kw">var</span> name: <span class="tp">String</span></div>
-        <div class="code-line">  <span class="kw">var</span> isPurchased: <span class="tp">Bool</span></div>
-        <div class="code-line">}</div>
-      </div>
-      <div class="arch-arrow">↓</div>
-      <div class="arch-split">
-        <div class="arch-box">
-          <h4>GroceryView.swift</h4>
-          <div class="code-line"><span class="kw">struct</span> <span class="tp">GroceryView</span>: <span class="pr">View</span> {</div>
-          <div class="code-line">  <span class="kw">@Query</span> <span class="kw">var</span> items: [<span class="tp">GroceryItem</span>]</div>
-          <div class="code-line">  <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">View</span> { ... }</div>
-          <div class="code-line">}</div>
-        </div>
-        <div class="arch-box">
-          <h4>TasksView.swift</h4>
-          <div class="code-line"><span class="kw">struct</span> <span class="tp">TasksView</span>: <span class="pr">View</span> {</div>
-          <div class="code-line">  <span class="kw">@Query</span> <span class="kw">var</span> tasks: [<span class="tp">TaskItem</span>]</div>
-          <div class="code-line">  <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">View</span> { ... }</div>
-          <div class="code-line">}</div>
-        </div>
-      </div>
-      <div class="arch-arrow">↓</div>
-      <div class="arch-box">
-        <h4>Package.swift</h4>
-        <div class="code-line"><span class="cm">// SwiftData + SwiftUI dependencies</span></div>
-        <div class="code-line">.<span class="kw">package</span>(<span class="st">"swift-data"</span>)</div>
+        <div class="feat-icon" style="background:#FCE4EC;color:#C2185B;">🛡️</div>
+        <h3>Privacy Manifest Included</h3>
+        <p>Apple's latest PrivacyInfo.xcprivacy requirements already handled.</p>
       </div>
     </div>
   </div>
@@ -271,7 +221,7 @@
       <span class="eyebrow">Business Opportunities</span>
       <h2 class="section-title">Build Multiple Apps From One Template</h2>
     </div>
-    <p class="mono-sub">for GroceryTasks Pro template</p>
+    <p class="mono-sub">Endless possibilities with the GroceryTasks Pro foundation</p>
     <div class="mono-grid">
       <div class="mono-card">
         <div class="mono-icon" style="background:#E8F5E9;">🧺</div>
@@ -301,131 +251,6 @@
   </div>
 </section>
 
-<section id="showcase">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Product Shot</span>
-      <h2 class="section-title">GroceryTasks Pro Interface</h2>
-    </div>
-    <div class="showcase-phone">
-      <div class="sc-screen">
-        <div class="sc-header">GroceryTasks <span></span></div>
-        <div class="sc-tabs">
-          <span class="sc-tab active">Groceries</span>
-          <span class="sc-tab inactive">Tasks</span>
-        </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;">Chocolate</div>
-              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Fruits & Vegetables • Qty: 3</div>
-            </div>
-          </div>
-        </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;">Apple</div>
-              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Fruits & Vegetables • Qty: 5</div>
-            </div>
-          </div>
-        </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;">Éclairs</div>
-              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Bakery • Qty: 5</div>
-            </div>
-          </div>
-        </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;">Roast beef</div>
-              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Meat & Fish • Qty: 1</div>
-            </div>
-          </div>
-        </div>
-        <div class="sc-purchased">
-          <div class="sc-purchased-title">Purchased (3)</div>
-          <div class="sc-item" style="padding:8px 0;">
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div style="flex:1;">
-                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">Coffee</div>
-              </div>
-            </div>
-          </div>
-          <div class="sc-item" style="padding:8px 0;">
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div style="flex:1;">
-                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">1liter-coke</div>
-              </div>
-            </div>
-          </div>
-          <div class="sc-item" style="padding:8px 0;">
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div style="flex:1;">
-                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">Banana</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="code">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Developer Experience</span>
-      <h2 class="section-title">Production-Ready SwiftUI Code</h2>
-    </div>
-    <div class="code-window">
-      <div class="code-overlay">Production-Ready Code</div>
-      <div class="code-header">
-        <div class="code-dot r"></div>
-        <div class="code-dot y"></div>
-        <div class="code-dot g"></div>
-        <span class="code-filename">GroceryView.swift</span>
-      </div>
-      <div class="code-body">
-        <div class="code-line"><span class="kw">import</span> SwiftUI</div>
-        <div class="code-line"><span class="kw">import</span> SwiftData</div>
-        <div class="code-line"></div>
-        <div class="code-line"><span class="kw">struct</span> <span class="tp">GroceryView</span>: <span class="pr">View</span> {</div>
-        <div class="code-line">    <span class="kw">@Environment</span>(\\.<span class="kw">modelContext</span>) <span class="kw">private</span> <span class="kw">var</span> context</div>
-        <div class="code-line">    <span class="kw">@Query</span>(<span class="kw">sort</span>: \\<span class="tp">GroceryItem</span>.<span class="kw">name</span>) <span class="kw">var</span> items: [<span class="tp">GroceryItem</span>]</div>
-        <div class="code-line"></div>
-        <div class="code-line">    <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">View</span> {</div>
-        <div class="code-line">        <span class="tp">NavigationStack</span> {</div>
-        <div class="code-line">            <span class="tp">List</span> {</div>
-        <div class="code-line">                <span class="kw">ForEach</span>(items) { item <span class="kw">in</span></div>
-        <div class="code-line">                    <span class="tp">GroceryRow</span>(item: item)</div>
-        <div class="code-line">                }</div>
-        <div class="code-line">            }</div>
-        <div class="code-line">            .<span class="kw">navigationTitle</span>(<span class="st">"Groceries"</span>)</div>
-        <div class="code-line">        }</div>
-        <div class="code-line">    }</div>
-        <div class="code-line">}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="pricing">
   <div class="wrap">
     <div class="section-head">
@@ -436,20 +261,18 @@
       <div class="pricing-badge">Non-Custodial Crypto Payment</div>
       <div class="pricing-price"><span>$</span>49<span> USD in USDC</span></div>
       <ul class="pricing-list">
-        <li>4 Swift source files</li>
-        <li>Complete SwiftData models</li>
-        <li>8 grocery categories</li>
-        <li>Commercial license</li>
-        <li>Free lifetime updates</li>
-        <li>30-day email support</li>
+        <li>Architecture @ModelActor (Zéro UI Freeze)</li>
+        <li>Guide de migration SwiftData inclus</li>
+        <li>Guide "0 à l'App Store en un weekend"</li>
+        <li>Compatible Swift Playgrounds (iPad ready)</li>
+        <li>Licence commerciale complète</li>
+        <li>Support direct via X (@PixelPulseIOS)</li>
       </ul>
       
-      <!-- LIEN SOLANA PAY CORRIGÉ AVEC USDC -->
       <a href="solana:A8f6N7SQYm4gjm48QdnwLRpFyZvCdsB76LHSyQ3cqJJ5?amount=49&spl-token=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&label=GroceryTasks%20Pro&message=Payment%20for%20GroceryTasks%20Pro%20Template&link=https://pixel-pulse-lovat.vercel.app/merci.html" class="pricing-btn" target="_blank">
         ⚡ Pay with Solana Pay (49 USDC)
       </a>
 
-      <!-- QR CODE CORRIGÉ POUR UTILISATEURS DESKTOP -->
       <div class="qr-container">
         <p>Desktop user? Scan with your mobile wallet (Phantom/Solflare):</p>
         <div class="qr-code">
@@ -461,7 +284,7 @@
         <div style="display: flex; gap: 12px; justify-content: center; font-size: 12px; color: var(--text-dim);">
           <span>🔒 0% Platform Fees</span>
           <span>⚡ Instant Settlement</span>
-          <span> Solana Network</span>
+          <span>☀️ Solana Network</span>
         </div>
         <span style="font-size: 11px; color: var(--text-dim); opacity: 0.7;">Funds go directly to your non-custodial wallet.</span>
       </div>
@@ -469,10 +292,31 @@
   </div>
 </section>
 
+<!-- NOUVELLE SECTION CONTACT -->
+<section style="padding: 60px 0; border-top: 1px solid var(--surface-line); background: var(--bg);">
+  <div class="wrap" style="text-align: center;">
+    <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; margin-bottom: 12px; color: var(--text);">Une question technique avant l'achat ?</h3>
+    <p style="color: var(--text-dim); font-size: 15px; max-width: 500px; margin: 0 auto 24px;">
+      Ce template est conçu par des développeurs, pour des développeurs. Contactez-nous directement pour toute question sur l'architecture ou l'intégration.
+    </p>
+    <a href="https://x.com/PixelPulseIOS" target="_blank" rel="noopener noreferrer" class="btn" style="background: #000; color: #fff; border: 1px solid var(--surface-line);">
+      <svg style="width: 16px; height: 16px; margin-right: 8px; fill: currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+      Contacter @PixelPulseIOS sur X
+    </a>
+  </div>
+</section>
+
 <footer>
   <div class="wrap footer-row">
-    <span>Pixel & Pulse © 2026. All rights reserved.</span>
-    <span>cashguardtx@gmail.com</span>
+    <span>Pixel & Pulse © 2026. Tous droits réservés.</span>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <a href="https://x.com/PixelPulseIOS" target="_blank" rel="noopener noreferrer" style="color: var(--text); display: flex; align-items: center; gap: 6px; transition: color 0.2s;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--text)'">
+        <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+        @PixelPulseIOS
+      </a>
+      <span style="color: var(--surface-line);">|</span>
+      <a href="mailto:cashguardtx@gmail.com" style="color: var(--text-dim);">cashguardtx@gmail.com</a>
+    </div>
   </div>
 </footer>
 
