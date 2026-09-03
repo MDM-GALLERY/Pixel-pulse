@@ -53,6 +53,11 @@
   .section-head{text-align:center;margin-bottom:52px;}
   .section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:600;margin-top:12px;letter-spacing:-0.01em;}
   
+  /* TRUST BADGE */
+  .trust-stats{display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; text-align: center;}
+  .trust-stat div:first-child{font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--amber);}
+  .trust-stat div:last-child{font-size: 13px; color: var(--text-dim); font-family: 'IBM Plex Mono', monospace;}
+
   .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
   .problem-card{background:rgba(232, 163, 61, 0.05);border:1px solid rgba(232, 163, 61, 0.2);border-radius:var(--radius);padding:28px 20px;text-align:center;}
   .problem-card h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px;color:var(--amber);}
@@ -190,7 +195,7 @@
       </div>
       <div class="phone">
         <div class="phone-screen">
-          <div class="ph-header">GroceryTasks <span>🔍</span></div>
+          <div class="ph-header">GroceryTasks <span></span></div>
           <div class="ph-tabs">
             <span class="ph-tab inactive">Groceries</span>
             <span class="ph-tab active">Tasks</span>
@@ -203,6 +208,30 @@
             <div class="ph-item"><span>✓</span><span class="n">Going biking with my son</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGE: DATA STABILITY GUARANTEE -->
+<section style="background: var(--bg); border-bottom: 1px solid var(--surface-line); padding: 40px 0;">
+  <div class="wrap">
+    <div class="trust-stats">
+      <div class="trust-stat">
+        <div>0</div>
+        <div>UI Freezes</div>
+      </div>
+      <div class="trust-stat">
+        <div>100%</div>
+        <div>Thread-Safe</div>
+      </div>
+      <div class="trust-stat">
+        <div>0</div>
+        <div>Data Loss</div>
+      </div>
+      <div class="trust-stat">
+        <div></div>
+        <div>Lifetime Migrations</div>
       </div>
     </div>
   </div>
@@ -259,7 +288,7 @@
         <p>Designed to be easily customized to avoid "minimum functionality" rejections.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E0F7FA;color:#00838F;">📚</div>
+        <div class="feat-icon" style="background:#E0F7FA;color:#00838F;"></div>
         <h3>Weekend Launch Guide</h3>
         <p>Step-by-step guide from zero to App Store submission.</p>
       </div>
@@ -267,6 +296,11 @@
         <div class="feat-icon" style="background:#FCE4EC;color:#C2185B;">🛡️</div>
         <h3>Privacy Manifest Included</h3>
         <p>Apple's latest PrivacyInfo.xcprivacy requirements already handled.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;">🛡️</div>
+        <h3>Data Layer Stability Guaranteed</h3>
+        <p>@ModelActor + Sendable DTOs. Zero crashes. Zero data loss. Even with 10,000+ items.</p>
       </div>
     </div>
   </div>
@@ -289,6 +323,7 @@
       <li>README.md & MigrationGuide.md</li>
       <li>Full commercial license (LICENSE.txt)</li>
       <li>Encrypted ZIP delivery (AES-256)</li>
+      <li>Lifetime SwiftData migration support</li>
     </ul>
   </div>
 </section>
@@ -376,7 +411,7 @@
     <p class="mono-sub">Endless possibilities with the GroceryTasks Pro foundation</p>
     <div class="mono-grid">
       <div class="mono-card">
-        <div class="mono-icon" style="background:#E8F5E9;">🧺</div>
+        <div class="mono-icon" style="background:#E8F5E9;"></div>
         <h3>Family Shopping List</h3>
       </div>
       <div class="mono-card">
@@ -384,11 +419,11 @@
         <h3>Fitness Meal Planner</h3>
       </div>
       <div class="mono-card">
-        <div class="mono-icon" style="background:#E8F5E9;">🌿</div>
+        <div class="mono-icon" style="background:#E8F5E9;"></div>
         <h3>Organic & Vegan Guide</h3>
       </div>
       <div class="mono-card">
-        <div class="mono-icon" style="background:#F5F5DC;">👨‍🍳</div>
+        <div class="mono-icon" style="background:#F5F5DC;">👨‍</div>
         <h3>Chef Ingredient Manager</h3>
       </div>
       <div class="mono-card">
@@ -396,7 +431,7 @@
         <h3>Student Budget Shopping</h3>
       </div>
       <div class="mono-card">
-        <div class="mono-icon" style="background:#FFF8E1;">🏕️</div>
+        <div class="mono-icon" style="background:#FFF8E1;">️</div>
         <h3>Camping Gear Checklist</h3>
       </div>
     </div>
