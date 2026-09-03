@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
 <style>
   :root{--bg:#0C0D10;--surface:#15161A;--surface-line:#232429;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--cyan:#4FD1C5;--blue:#007AFF;--purple:#5856D6;--code-bg:#1E1E2E;--radius:14px;--solana:#9945FF;}
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -222,15 +222,15 @@
         <div>UI Freezes</div>
       </div>
       <div class="trust-stat">
-        <div>100%</div>
-        <div>Thread-Safe</div>
+        <div>@ModelActor</div>
+        <div>No Data Races</div>
       </div>
       <div class="trust-stat">
         <div>0</div>
         <div>Data Loss</div>
       </div>
       <div class="trust-stat">
-        <div></div>
+        <div>∞</div>
         <div>Lifetime Migrations</div>
       </div>
     </div>
@@ -288,7 +288,7 @@
         <p>Designed to be easily customized to avoid "minimum functionality" rejections.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E0F7FA;color:#00838F;"></div>
+        <div class="feat-icon" style="background:#E0F7FA;color:#00838F;">🚀</div>
         <h3>Weekend Launch Guide</h3>
         <p>Step-by-step guide from zero to App Store submission.</p>
       </div>
@@ -298,7 +298,7 @@
         <p>Apple's latest PrivacyInfo.xcprivacy requirements already handled.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;">🛡️</div>
+        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;">🔒</div>
         <h3>Data Layer Stability Guaranteed</h3>
         <p>@ModelActor + Sendable DTOs. Zero crashes. Zero data loss. Even with 10,000+ items.</p>
       </div>
@@ -431,7 +431,7 @@
         <h3>Student Budget Shopping</h3>
       </div>
       <div class="mono-card">
-        <div class="mono-icon" style="background:#FFF8E1;">️</div>
+        <div class="mono-icon" style="background:#FFF8E1;">🏕️</div>
         <h3>Camping Gear Checklist</h3>
       </div>
     </div>
@@ -556,6 +556,10 @@
       <div class="faq-item">
         <h4>Can I use this template for client work?</h4>
         <p>Yes! The commercial license allows you to use this template for client projects. One license per client project.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How do you prevent data races?</h4>
+        <p>We use @ModelActor architecture exclusively. All data operations happen inside isolated actors, never on the main thread. Combined with Sendable DTOs, this guarantees zero data races by design.</p>
       </div>
       <div class="faq-item">
         <h4>How do I receive the template after payment?</h4>
