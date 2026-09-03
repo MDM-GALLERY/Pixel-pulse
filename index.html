@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GroceryTasks Pro — Professional iOS SwiftUI source code template with SwiftData.">
+<meta name="description" content="GroceryTasks Pro — Professional iOS SwiftUI source code template with SwiftData. Launch your app in a weekend.">
 <title>Pixel & Pulse — GroceryTasks Pro | SwiftUI Template</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <style>
   :root{--bg:#0C0D10;--surface:#15161A;--surface-line:#232429;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--cyan:#4FD1C5;--blue:#007AFF;--purple:#5856D6;--code-bg:#1E1E2E;--radius:14px;--solana:#9945FF;}
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -18,7 +18,7 @@
   .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:8px;}
   .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px 1px var(--amber);}
   a{color:inherit;text-decoration:none;}
-  header.top{position:sticky;top:0;z-index:50;background:rgba(12,13,16,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--surface-line);}
+  header.top{position:sticky;top:0;z-index:50;background:rgba(12,13,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--surface-line);}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
   .nav-mark{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.02em;}
   .nav-mark span{color:var(--amber);}
@@ -33,7 +33,7 @@
   .hero-brand span{color:var(--amber);}
   .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px;}
   .hero h1 .accent{color:var(--amber);}
-  .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-dim);max-width:560px;margin:0 auto 36px;}
+  .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-dim);max-width:600px;margin:0 auto 36px;}
   .hero-badges{display:flex;gap:10px;justify-content:center;margin-bottom:40px;flex-wrap:wrap;}
   .hero-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:6px 16px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);}
   .phones{display:flex;gap:30px;justify-content:center;align-items:flex-end;position:relative;z-index:2;margin-top:20px;}
@@ -48,31 +48,55 @@
   .ph-item{display:flex;align-items:center;gap:6px;padding:4px 0;font-size:9px;color:var(--text-dim);}
   .ph-item .n{color:var(--text);font-weight:500;}.ph-item .q{margin-left:auto;color:var(--cyan);font-weight:600;}
   .ph-done{margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.08);}.ph-done .ph-item .n{text-decoration:line-through;color:var(--text-dim);}
-  section{padding:80px 0;position:relative;}.section-head{text-align:center;margin-bottom:52px;}
+  
+  section{padding:80px 0;position:relative;}
+  .section-head{text-align:center;margin-bottom:52px;}
   .section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:600;margin-top:12px;letter-spacing:-0.01em;}
+  
+  /* Problem Section */
+  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
+  .problem-card{background:rgba(232, 163, 61, 0.05);border:1px solid rgba(232, 163, 61, 0.2);border-radius:var(--radius);padding:28px 20px;text-align:center;}
+  .problem-card h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px;color:var(--amber);}
+  .problem-card p{font-size:13px;color:var(--text-dim);margin:0;}
+
   #features{background:linear-gradient(180deg, #0F1020 0%, #15162A 50%, #0C0D10 100%);}
   .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
-  @media(max-width:768px){.features-grid{grid-template-columns:1fr;}}
   .feat-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:transform .2s ease,border-color .2s ease;}
   .feat-card:hover{transform:translateY(-4px);border-color:#33343B;}
   .feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;}
   .feat-card h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px;}
   .feat-card p{font-size:13px;color:var(--text-dim);margin:0;}
-  #architecture{background:#1A1B24;}.arch-flow{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:700px;margin:0 auto;}
+
+  /* Checklist Section */
+  .checklist{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:700px;margin:0 auto;text-align:left;}
+  .checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text-dim);line-height:1.5;}
+  .checklist li::before{content:'✓';color:#34C759;font-weight:800;font-size:16px;flex-shrink:0;margin-top:1px;}
+
+  /* Weekend Guide */
+  .guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto;}
+  .guide-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:var(--radius);padding:32px;}
+  .guide-card h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;margin-bottom:16px;color:var(--amber);}
+  .guide-card ul{list-style:none;padding:0;}
+  .guide-card li{font-size:14px;color:var(--text-dim);margin-bottom:10px;display:flex;gap:10px;}
+  .guide-card li::before{content:'☐';color:var(--text-dim);}
+
+  #architecture{background:#1A1B24;}
+  .arch-flow{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:700px;margin:0 auto;}
   .arch-box{background:var(--code-bg);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 24px;width:100%;max-width:520px;}
   .arch-box h4{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--amber);margin-bottom:10px;}
   .code-line{font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;}
   .kw{color:#C678DD;}.tp{color:#E06C75;}.pr{color:#61AFEF;}.cm{color:#5C6370;font-style:italic;}.st{color:#98C379;}
   .arch-arrow{color:var(--text-dim);font-size:20px;}.arch-split{display:flex;gap:16px;width:100%;justify-content:center;flex-wrap:wrap;}
   .arch-split .arch-box{max-width:250px;}
+
   #monetization{background:var(--bg);border-top:1px solid var(--surface-line);border-bottom:1px solid var(--surface-line);}
   .mono-sub{color:var(--text-dim);text-align:center;margin-bottom:40px;font-size:14px;}
   .mono-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto;}
-  @media(max-width:768px){.mono-grid{grid-template-columns:1fr;}}
   .mono-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:16px;padding:28px 16px;text-align:center;transition:transform .2s ease,border-color .2s ease;}
   .mono-card:hover{transform:translateY(-4px);border-color:#33343B;}
   .mono-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:28px;}
   .mono-card h3{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text);}
+
   #showcase{background:linear-gradient(180deg, #0C0D10 0%, #12132A 100%);text-align:center;}
   .showcase-phone{width:280px;height:560px;background:#000;border-radius:44px;border:4px solid #2A2A2E;margin:0 auto;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6);position:relative;}
   .showcase-phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:#000;border-radius:14px;z-index:10;}
@@ -80,17 +104,24 @@
   .sc-header{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
   .sc-tabs{display:flex;gap:24px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:10px;}
   .sc-tab{font-size:14px;font-weight:600;padding-bottom:5px;}.sc-tab.active{color:var(--blue);border-bottom:2px solid var(--blue);}.sc-tab.inactive{color:var(--text-dim);}
-  .sc-cat{margin-bottom:12px;}.sc-cat-title{font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
-  .sc-item{display:flex;align-items:center;justify-content:space-between;padding:7px 0;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.04);}
-  .sc-item-name{font-weight:500;}.sc-item-qty{background:rgba(79,209,197,0.12);color:var(--cyan);padding:2px 10px;border-radius:999px;font-size:11px;font-weight:700;}
+  .sc-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
   .sc-purchased{margin-top:14px;padding-top:14px;border-top:2px solid rgba(255,255,255,0.08);}.sc-purchased-title{font-size:12px;font-weight:700;color:#34C759;margin-bottom:8px;}
   .sc-purchased .sc-item-name{text-decoration:line-through;color:var(--text-dim);}
-  #code{background:var(--bg);}.code-window{background:var(--code-bg);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;max-width:800px;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative;}
+
+  #code{background:var(--bg);}
+  .code-window{background:var(--code-bg);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;max-width:800px;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative;}
   .code-overlay{position:absolute;top:16px;right:16px;background:var(--amber);color:#000;padding:5px 14px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;z-index:5;}
   .code-header{background:#252537;padding:12px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.05);}
   .code-dot{width:12px;height:12px;border-radius:50%;}.code-dot.r{background:#FF5F56;}.code-dot.y{background:#FFBD2E;}.code-dot.g{background:#27C93F;}
   .code-filename{margin-left:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);}
   .code-body{padding:20px 24px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.85;overflow-x:auto;}
+
+  /* FAQ Section */
+  .faq-list{max-width:700px;margin:0 auto;text-align:left;}
+  .faq-item{background:var(--surface);border:1px solid var(--surface-line);border-radius:12px;padding:20px 24px;margin-bottom:12px;}
+  .faq-item h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px;color:var(--text);}
+  .faq-item p{font-size:13px;color:var(--text-dim);margin:0;line-height:1.6;}
+
   #pricing{background:linear-gradient(135deg, #0F0F1A 0%, #0C0D10 100%);position:relative;overflow:hidden;}
   #pricing::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle, rgba(153, 69, 255, 0.15) 0%, transparent 70%);pointer-events:none;}
   .pricing-card{background:rgba(21,22,26,0.92);backdrop-filter:blur(20px);border:1px solid rgba(153, 69, 255, 0.25);border-radius:24px;padding:48px 40px;max-width:440px;margin:0 auto;text-align:center;position:relative;z-index:1;box-shadow:0 20px 60px rgba(153, 69, 255, 0.08);}
@@ -107,8 +138,18 @@
   .qr-container p{font-size:12px;color:var(--text-dim);margin-bottom:12px;}
   .qr-code{background:white;padding:10px;border-radius:12px;display:inline-block;}
   .qr-code img{width:160px;height:160px;display:block;}
-  footer{border-top:1px solid var(--surface-line);padding:32px 0;}.footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);}
-  @media(max-width:640px){.phones{flex-direction:column;align-items:center;}.phone:nth-child(1),.phone:nth-child(2){transform:none;}.features-grid{grid-template-columns:1fr;}.mono-grid{grid-template-columns:1fr;}.arch-split{flex-direction:column;align-items:center;}.arch-split .arch-box{max-width:520px;}.footer-row{flex-direction:column;text-align:center;}}
+  
+  footer{border-top:1px solid var(--surface-line);padding:32px 0;}
+  .footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);}
+  
+  @media(max-width:768px){
+    .problem-grid, .features-grid, .mono-grid, .guide-grid, .checklist {grid-template-columns:1fr;}
+    .phones{flex-direction:column;align-items:center;}
+    .phone:nth-child(1),.phone:nth-child(2){transform:none;}
+    .arch-split{flex-direction:column;align-items:center;}
+    .arch-split .arch-box{max-width:520px;}
+    .footer-row{flex-direction:column;text-align:center;}
+  }
 </style>
 </head>
 <body>
@@ -124,10 +165,10 @@
   <div class="wrap">
     <div class="hero-brand">PIXEL <span>&</span> PULSE PRESENTS</div>
     <span class="eyebrow">SwiftUI Source Code Template — iOS 17+</span>
-    <h1>GroceryTasks <span class="accent">Pro</span></h1>
-    <p class="hero-sub">Professional iOS template to build grocery list and task management apps in hours, not weeks. Production-ready SwiftUI code with SwiftData.</p>
+    <h1>Launch Your iOS App in a <span class="accent">Weekend</span>, Not 3 Weeks</h1>
+    <p class="hero-sub">GroceryTasks Pro is a production-ready SwiftUI + SwiftData template. Zero UI freeze. Zero data loss. Zero App Store rejections.</p>
     <div class="hero-badges">
-      <span class="hero-badge">iOS 17+</span>
+      <span class="hero-badge">iOS 17.2+</span>
       <span class="hero-badge">SwiftUI</span>
       <span class="hero-badge">SwiftData</span>
       <span class="hero-badge">@ModelActor</span>
@@ -149,8 +190,6 @@
           <div class="ph-item"><span>•</span><span class="n">Apple</span><span class="q">Qty: 5</span></div>
           <div class="ph-cat"> Bakery</div>
           <div class="ph-item"><span>•</span><span class="n">Éclairs</span><span class="q">Qty: 5</span></div>
-          <div class="ph-cat">🥩 Meat & Fish</div>
-          <div class="ph-item"><span>•</span><span class="n">Roast beef</span><span class="q">Qty: 1</span></div>
         </div>
       </div>
       <div class="phone">
@@ -166,9 +205,256 @@
           <div class="ph-done">
             <div class="ph-cat" style="color:#34C759;">Completed</div>
             <div class="ph-item"><span>✓</span><span class="n">Going biking with my son</span></div>
-            <div class="ph-item"><span>✓</span><span class="n">Buying an iPhone</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" style="background: var(--bg); border-bottom: 1px solid var(--surface-line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Reality</span>
+      <h2 class="section-title">Most SwiftUI Templates Are Broken From Day One</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>❌ UI Freezes</h3>
+        <p>Basic @Query blocks the main thread. Your app stutters with 100+ items, leading to 1-star reviews.</p>
+      </div>
+      <div class="problem-card">
+        <h3>❌ Data Loss on Update</h3>
+        <p>Add a new field? Your app crashes for existing users. No migration plan = lost customers.</p>
+      </div>
+      <div class="problem-card">
+        <h3>❌ App Store Rejection</h3>
+        <p>Guideline 4.2 "minimum functionality" or missing PrivacyInfo.xcprivacy. Weeks of wasted work.</p>
+      </div
+</think>
+
+Ton fichier HTML de base est **excellent** : le design est moderne, les couleurs sont cohérentes et la structure CSS est très propre. 
+
+Cependant, pour maximiser les conversions, il lui manquait les sections de "copywriting" persuasif que nous avons définies ensemble (Le Problème, La Checklist complète, Le Guide du Weekend, et la FAQ). J'ai aussi mis à jour l'extrait de code pour qu'il montre le `@ModelActor` (pour prouver ta promesse "Zero UI Freeze", car l'ancien montrait juste un `@Query` basique).
+
+Voici le **fichier `index.html` complet, 100 % en anglais**, optimisé pour la vente, avec toutes les nouvelles sections intégrées harmonieusement dans ton design actuel.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GroceryTasks Pro — Professional iOS SwiftUI source code template with SwiftData. Launch your app in a weekend.">
+<title>Pixel & Pulse — GroceryTasks Pro | SwiftUI Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<style>
+  :root{--bg:#0C0D10;--surface:#15161A;--surface-line:#232429;--text:#EDEAE3;--text-dim:#8B8B92;--amber:#E8A33D;--cyan:#4FD1C5;--blue:#007AFF;--purple:#5856D6;--code-bg:#1E1E2E;--radius:14px;--solana:#9945FF;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);display:inline-flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber);box-shadow:0 0 8px 1px var(--amber);}
+  a{color:inherit;text-decoration:none;}
+  header.top{position:sticky;top:0;z-index:50;background:rgba(12,13,16,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--surface-line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1100px;margin:0 auto;}
+  .nav-mark{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;letter-spacing:0.02em;}
+  .nav-mark span{color:var(--amber);}
+  .nav-cta{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--text-dim);border:1px solid var(--surface-line);padding:8px 18px;border-radius:999px;transition:all .2s ease;}
+  .nav-cta:hover{color:var(--text);border-color:var(--amber);}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.02em;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;border-radius:999px;transition:all .2s ease;cursor:pointer;border:none;font-weight:500;}
+  .btn-primary{background:var(--amber);color:#141414;}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px -8px rgba(232,163,61,0.5);}
+  .hero{padding:80px 0 60px;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg, #0C0D10 0%, #11121A 100%);}
+  .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle, rgba(232,163,61,0.12) 0%, transparent 60%);pointer-events:none;}
+  .hero-brand{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:var(--text-dim);letter-spacing:0.1em;margin-bottom:16px;}
+  .hero-brand span{color:var(--amber);}
+  .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:700;letter-spacing:-0.02em;line-height:1.05;margin-bottom:16px;}
+  .hero h1 .accent{color:var(--amber);}
+  .hero-sub{font-size:clamp(15px,2vw,18px);color:var(--text-dim);max-width:600px;margin:0 auto 36px;}
+  .hero-badges{display:flex;gap:10px;justify-content:center;margin-bottom:40px;flex-wrap:wrap;}
+  .hero-badge{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:6px 16px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);}
+  .phones{display:flex;gap:30px;justify-content:center;align-items:flex-end;position:relative;z-index:2;margin-top:20px;}
+  .phone{width:180px;height:360px;background:#000;border-radius:28px;border:3px solid #2A2A2E;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,0.6);}
+  .phone:nth-child(1){transform:rotate(-6deg) translateY(10px);}.phone:nth-child(2){transform:rotate(6deg) translateY(10px);}
+  .phone-screen{width:100%;height:100%;background:var(--surface);padding:14px;display:flex;flex-direction:column;}
+  .ph-header{font-size:10px;font-weight:700;display:flex;justify-content:space-between;margin-bottom:10px;}
+  .ph-tabs{display:flex;gap:12px;margin-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:6px;}
+  .ph-tab{font-size:10px;font-weight:600;padding-bottom:3px;}
+  .ph-tab.active{color:var(--blue);border-bottom:2px solid var(--blue);}.ph-tab.inactive{color:var(--text-dim);}
+  .ph-cat{font-size:9px;font-weight:700;color:var(--amber);margin-top:6px;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.5px;}
+  .ph-item{display:flex;align-items:center;gap:6px;padding:4px 0;font-size:9px;color:var(--text-dim);}
+  .ph-item .n{color:var(--text);font-weight:500;}.ph-item .q{margin-left:auto;color:var(--cyan);font-weight:600;}
+  .ph-done{margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,0.08);}.ph-done .ph-item .n{text-decoration:line-through;color:var(--text-dim);}
+  
+  section{padding:80px 0;position:relative;}
+  .section-head{text-align:center;margin-bottom:52px;}
+  .section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:600;margin-top:12px;letter-spacing:-0.01em;}
+  
+  /* Problem Section */
+  .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
+  .problem-card{background:rgba(232, 163, 61, 0.05);border:1px solid rgba(232, 163, 61, 0.2);border-radius:var(--radius);padding:28px 20px;text-align:center;}
+  .problem-card h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px;color:var(--amber);}
+  .problem-card p{font-size:13px;color:var(--text-dim);margin:0;}
+
+  #features{background:linear-gradient(180deg, #0F1020 0%, #15162A 50%, #0C0D10 100%);}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto;}
+  .feat-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:transform .2s ease,border-color .2s ease;}
+  .feat-card:hover{transform:translateY(-4px);border-color:#33343B;}
+  .feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;}
+  .feat-card h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px;}
+  .feat-card p{font-size:13px;color:var(--text-dim);margin:0;}
+
+  /* Checklist Section */
+  .checklist{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:700px;margin:0 auto;text-align:left;}
+  .checklist li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--text-dim);line-height:1.5;}
+  .checklist li::before{content:'✓';color:#34C759;font-weight:800;font-size:16px;flex-shrink:0;margin-top:1px;}
+
+  /* Weekend Guide */
+  .guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto;}
+  .guide-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:var(--radius);padding:32px;}
+  .guide-card h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:600;margin-bottom:16px;color:var(--amber);}
+  .guide-card ul{list-style:none;padding:0;}
+  .guide-card li{font-size:14px;color:var(--text-dim);margin-bottom:10px;display:flex;gap:10px;}
+  .guide-card li::before{content:'☐';color:var(--text-dim);}
+
+  #architecture{background:#1A1B24;}
+  .arch-flow{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:700px;margin:0 auto;}
+  .arch-box{background:var(--code-bg);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:18px 24px;width:100%;max-width:520px;}
+  .arch-box h4{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--amber);margin-bottom:10px;}
+  .code-line{font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;}
+  .kw{color:#C678DD;}.tp{color:#E06C75;}.pr{color:#61AFEF;}.cm{color:#5C6370;font-style:italic;}.st{color:#98C379;}
+  .arch-arrow{color:var(--text-dim);font-size:20px;}.arch-split{display:flex;gap:16px;width:100%;justify-content:center;flex-wrap:wrap;}
+  .arch-split .arch-box{max-width:250px;}
+
+  #monetization{background:var(--bg);border-top:1px solid var(--surface-line);border-bottom:1px solid var(--surface-line);}
+  .mono-sub{color:var(--text-dim);text-align:center;margin-bottom:40px;font-size:14px;}
+  .mono-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto;}
+  .mono-card{background:var(--surface);border:1px solid var(--surface-line);border-radius:16px;padding:28px 16px;text-align:center;transition:transform .2s ease,border-color .2s ease;}
+  .mono-card:hover{transform:translateY(-4px);border-color:#33343B;}
+  .mono-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:28px;}
+  .mono-card h3{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text);}
+
+  #showcase{background:linear-gradient(180deg, #0C0D10 0%, #12132A 100%);text-align:center;}
+  .showcase-phone{width:280px;height:560px;background:#000;border-radius:44px;border:4px solid #2A2A2E;margin:0 auto;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.6);position:relative;}
+  .showcase-phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:26px;background:#000;border-radius:14px;z-index:10;}
+  .sc-screen{width:100%;height:100%;background:var(--surface);padding:48px 20px 20px;display:flex;flex-direction:column;text-align:left;}
+  .sc-header{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;}
+  .sc-tabs{display:flex;gap:24px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:10px;}
+  .sc-tab{font-size:14px;font-weight:600;padding-bottom:5px;}.sc-tab.active{color:var(--blue);border-bottom:2px solid var(--blue);}.sc-tab.inactive{color:var(--text-dim);}
+  .sc-item{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+  .sc-purchased{margin-top:14px;padding-top:14px;border-top:2px solid rgba(255,255,255,0.08);}.sc-purchased-title{font-size:12px;font-weight:700;color:#34C759;margin-bottom:8px;}
+  .sc-purchased .sc-item-name{text-decoration:line-through;color:var(--text-dim);}
+
+  #code{background:var(--bg);}
+  .code-window{background:var(--code-bg);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;max-width:800px;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative;}
+  .code-overlay{position:absolute;top:16px;right:16px;background:var(--amber);color:#000;padding:5px 14px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1px;z-index:5;}
+  .code-header{background:#252537;padding:12px 18px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,0.05);}
+  .code-dot{width:12px;height:12px;border-radius:50%;}.code-dot.r{background:#FF5F56;}.code-dot.y{background:#FFBD2E;}.code-dot.g{background:#27C93F;}
+  .code-filename{margin-left:10px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);}
+  .code-body{padding:20px 24px;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.85;overflow-x:auto;}
+
+  /* FAQ Section */
+  .faq-list{max-width:700px;margin:0 auto;text-align:left;}
+  .faq-item{background:var(--surface);border:1px solid var(--surface-line);border-radius:12px;padding:20px 24px;margin-bottom:12px;}
+  .faq-item h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px;color:var(--text);}
+  .faq-item p{font-size:13px;color:var(--text-dim);margin:0;line-height:1.6;}
+
+  #pricing{background:linear-gradient(135deg, #0F0F1A 0%, #0C0D10 100%);position:relative;overflow:hidden;}
+  #pricing::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle, rgba(153, 69, 255, 0.15) 0%, transparent 70%);pointer-events:none;}
+  .pricing-card{background:rgba(21,22,26,0.92);backdrop-filter:blur(20px);border:1px solid rgba(153, 69, 255, 0.25);border-radius:24px;padding:48px 40px;max-width:440px;margin:0 auto;text-align:center;position:relative;z-index:1;box-shadow:0 20px 60px rgba(153, 69, 255, 0.08);}
+  .pricing-badge{display:inline-block;background:rgba(153, 69, 255, 0.12);color:var(--solana);padding:5px 16px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;}
+  .pricing-price{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:800;color:var(--text);line-height:1;margin-bottom:4px;}
+  .pricing-price span{font-size:18px;font-weight:500;color:var(--text-dim);}
+  .pricing-list{text-align:left;margin:32px 0;list-style:none;padding:0;}
+  .pricing-list li{padding:10px 0;font-size:14px;color:var(--text-dim);display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(255,255,255,0.04);}
+  .pricing-list li::before{content:'✓';color:#34C759;font-weight:800;font-size:15px;}
+  .pricing-btn{background:var(--solana);color:#fff;border:none;padding:16px 48px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:700;cursor:pointer;width:100%;transition:all .2s ease;text-decoration:none;display:inline-block;}
+  .pricing-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(153, 69, 255, 0.4);}
+  .pricing-instant{margin-top:16px;font-size:12px;color:var(--text-dim);display:flex;align-items:center;justify-content:center;gap:6px;}
+  .qr-container{margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);}
+  .qr-container p{font-size:12px;color:var(--text-dim);margin-bottom:12px;}
+  .qr-code{background:white;padding:10px;border-radius:12px;display:inline-block;}
+  .qr-code img{width:160px;height:160px;display:block;}
+  
+  footer{border-top:1px solid var(--surface-line);padding:32px 0;}
+  .footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-dim);}
+  
+  @media(max-width:768px){
+    .problem-grid, .features-grid, .mono-grid, .guide-grid, .checklist {grid-template-columns:1fr;}
+    .phones{flex-direction:column;align-items:center;}
+    .phone:nth-child(1),.phone:nth-child(2){transform:none;}
+    .arch-split{flex-direction:column;align-items:center;}
+    .arch-split .arch-box{max-width:520px;}
+    .footer-row{flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="nav">
+    <div class="nav-mark">PIXEL <span>&</span> PULSE</div>
+    <a class="nav-cta" href="#pricing">Get Template — <LaTex>id_1</LaTex>49
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v11M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="phones">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-header">GroceryTasks <span></span></div>
+          <div class="ph-tabs">
+            <span class="ph-tab active">Groceries</span>
+            <span class="ph-tab inactive">Tasks</span>
+          </div>
+          <div class="ph-cat"> Fruits & Vegetables</div>
+          <div class="ph-item"><span>•</span><span class="n">Chocolate</span><span class="q">Qty: 3</span></div>
+          <div class="ph-item"><span>•</span><span class="n">Apple</span><span class="q">Qty: 5</span></div>
+          <div class="ph-cat"> Bakery</div>
+          <div class="ph-item"><span>•</span><span class="n">Éclairs</span><span class="q">Qty: 5</span></div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="ph-header">GroceryTasks <span>🔍</span></div>
+          <div class="ph-tabs">
+            <span class="ph-tab inactive">Groceries</span>
+            <span class="ph-tab active">Tasks</span>
+          </div>
+          <div class="ph-cat">To Do</div>
+          <div class="ph-item"><span>☐</span><span class="n">Midnight party</span></div>
+          <div class="ph-item"><span></span><span class="n">Grocery Store afternoon</span></div>
+          <div class="ph-done">
+            <div class="ph-cat" style="color:#34C759;">Completed</div>
+            <div class="ph-item"><span>✓</span><span class="n">Going biking with my son</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" style="background: var(--bg); border-bottom: 1px solid var(--surface-line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Reality</span>
+      <h2 class="section-title">Most SwiftUI Templates Are Broken From Day One</h2>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>❌ UI Freezes</h3>
+        <p>Basic @Query blocks the main thread. Your app stutters with 100+ items, leading to 1-star reviews.</p>
+      </div>
+      <div class="problem-card">
+        <h3>❌ Data Loss on Update</h3>
+        <p>Add a new field? Your app crashes for existing users. No migration plan = lost customers.</p>
+      </div>
+      <div class="problem-card">
+        <h3>❌ App Store Rejection</h3>
+        <p>Guideline 4.2 "minimum functionality" or missing PrivacyInfo.xcprivacy. Weeks of wasted work.</p>
       </div>
     </div>
   </div>
@@ -178,11 +464,11 @@
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Capabilities</span>
-      <h2 class="section-title">Feature Highlights</h2>
+      <h2 class="section-title">Production-Ready Architecture, Not a UI Shell</h2>
     </div>
     <div class="features-grid">
       <div class="feat-card">
-        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;"></div>
+        <div class="feat-icon" style="background:#E8F5E9;color:#2E7D32;">⚡</div>
         <h3>@ModelActor Architecture</h3>
         <p>Zero UI freeze, even with 10,000+ items. Thread-safe by design.</p>
       </div>
@@ -192,7 +478,7 @@
         <p>VersionedSchema & MigrationPlan included. No data loss ever.</p>
       </div>
       <div class="feat-card">
-        <div class="feat-icon" style="background:#F3E5F5;color:#6A1B9A;"></div>
+        <div class="feat-icon" style="background:#F3E5F5;color:#6A1B9A;">📱</div>
         <h3>Swift Playgrounds Ready</h3>
         <p>Optimized for iPad development. Copy, paste, and build.</p>
       </div>
@@ -210,6 +496,58 @@
         <div class="feat-icon" style="background:#FCE4EC;color:#C2185B;">🛡️</div>
         <h3>Privacy Manifest Included</h3>
         <p>Apple's latest PrivacyInfo.xcprivacy requirements already handled.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="included" style="background: var(--bg); border-top: 1px solid var(--surface-line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What's Included</span>
+      <h2 class="section-title">Everything You Need to Ship</h2>
+    </div>
+    <ul class="checklist">
+      <li>12 fully commented Swift files</li>
+      <li>@ModelActor architecture for background tasks</li>
+      <li>SwiftData migrations (VersionedSchema)</li>
+      <li>Apple Privacy Manifest (PrivacyInfo.xcprivacy)</li>
+      <li>Demo data loader matching website screenshots</li>
+      <li>Reusable Empty State views</li>
+      <li>Centralized Theme system (colors, typography)</li>
+      <li>README.md & MigrationGuide.md</li>
+      <li>Full commercial license (LICENSE.txt)</li>
+      <li>Encrypted ZIP delivery (AES-256)</li>
+    </ul>
+  </div>
+</section>
+
+<section id="guide" style="background: linear-gradient(180deg, #0F1020 0%, #0C0D10 100%); border-top: 1px solid var(--surface-line);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Roadmap</span>
+      <h2 class="section-title">From 0 to App Store in a Weekend</h2>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <h3>Day 1: Setup & Customization</h3>
+        <ul>
+          <li>Open in Xcode 15.2+ or Swift Playgrounds</li>
+          <li>Change Bundle Identifier</li>
+          <li>Customize Theme.swift (colors, typography)</li>
+          <li>Replace demo data in DemoDataLoader.swift</li>
+          <li>Enable iCloud & Widgets in Capabilities</li>
+        </ul>
+      </div>
+      <div class="guide-card">
+        <h3>Day 2: Assets & Submission</h3>
+        <ul>
+          <li>Generate app icons</li>
+          <li>Capture screenshots (iPhone 15 Pro, iPad Pro)</li>
+          <li>Create App Store Connect listing</li>
+          <li>Archive & Test via TestFlight</li>
+          <li>Submit to App Review</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -241,25 +579,18 @@
       <div class="arch-arrow">↓</div>
       <div class="arch-split">
         <div class="arch-box">
-          <h4>GroceryView.swift</h4>
-          <div class="code-line"><span class="kw">struct</span> <span class="tp">GroceryView</span>: <span class="pr">View</span> {</div>
-          <div class="code-line">  <span class="kw">@Query</span> <span class="kw">var</span> items: [<span class="tp">GroceryItem</span>]</div>
-          <div class="code-line">  <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">View</span> { ... }</div>
+          <h4>GroceryDataActor.swift</h4>
+          <div class="code-line"><span class="kw">@ModelActor</span></div>
+          <div class="code-line"><span class="kw">actor</span> <span class="tp">DataActor</span> {</div>
+          <div class="code-line">  <span class="kw">func</span> <span class="pr">fetch</span>() <span class="kw">async</span></div>
           <div class="code-line">}</div>
         </div>
         <div class="arch-box">
-          <h4>TasksView.swift</h4>
-          <div class="code-line"><span class="kw">struct</span> <span class="tp">TasksView</span>: <span class="pr">View</span> {</div>
-          <div class="code-line">  <span class="kw">@Query</span> <span class="kw">var</span> tasks: [<span class="tp">TaskItem</span>]</div>
+          <h4>GroceryView.swift</h4>
+          <div class="code-line"><span class="kw">struct</span> <span class="tp">GroceryView</span>: <span class="pr">View</span> {</div>
           <div class="code-line">  <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">View</span> { ... }</div>
           <div class="code-line">}</div>
         </div>
-      </div>
-      <div class="arch-arrow">↓</div>
-      <div class="arch-box">
-        <h4>Package.swift</h4>
-        <div class="code-line"><span class="cm">// SwiftData + SwiftUI dependencies</span></div>
-        <div class="code-line">.<span class="kw">package</span>(<span class="st">"swift-data"</span>)</div>
       </div>
     </div>
   </div>
@@ -314,7 +645,7 @@
           <span class="sc-tab active">Groceries</span>
           <span class="sc-tab inactive">Tasks</span>
         </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div class="sc-item">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
             <div style="flex:1;">
@@ -323,7 +654,7 @@
             </div>
           </div>
         </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div class="sc-item">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
             <div style="flex:1;">
@@ -332,21 +663,12 @@
             </div>
           </div>
         </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div class="sc-item">
           <div style="display:flex;align-items:center;gap:8px;">
             <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
             <div style="flex:1;">
               <div style="font-weight:600;font-size:14px;">Éclairs</div>
               <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Bakery • Qty: 5</div>
-            </div>
-          </div>
-        </div>
-        <div class="sc-item" style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:18px;height:18px;border:2px solid var(--text-dim);border-radius:50%;"></div>
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;">Roast beef</div>
-              <div style="font-size:11px;color:var(--text-dim);margin-top:2px;">Meat & Fish • Qty: 1</div>
             </div>
           </div>
         </div>
@@ -372,16 +694,6 @@
               </div>
             </div>
           </div>
-          <div class="sc-item" style="padding:8px 0;">
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="width:18px;height:18px;background:#34C759;border-radius:50%;display:flex;align-items:center;justify-content:center;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div style="flex:1;">
-                <div style="font-weight:500;font-size:13px;text-decoration:line-through;color:var(--text-dim);">Banana</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -395,46 +707,24 @@
       <h2 class="section-title">Production-Ready SwiftUI Code</h2>
     </div>
     <div class="code-window">
-      <div class="code-overlay">Production-Ready Code</div>
+      <div class="code-overlay">Zero UI Freeze</div>
       <div class="code-header">
         <div class="code-dot r"></div>
         <div class="code-dot y"></div>
         <div class="code-dot g"></div>
-        <span class="code-filename">GroceryView.swift</span>
+        <span class="code-filename">GroceryDataActor.swift</span>
       </div>
       <div class="code-body">
-        <div class="code-line"><span class="kw">import</span> SwiftUI</div>
         <div class="code-line"><span class="kw">import</span> SwiftData</div>
         <div class="code-line"></div>
-        <div class="code-line"><span class="kw">struct</span> <span class="tp">GroceryView</span>: <span class="pr">View</span> {</div>
-        <div class="code-line">    <span class="kw">@Environment</span>(\\.<span class="kw">modelContext</span>) <span class="kw">private</span> <span class="kw">var</span> context</div>
-        <div class="code-line">    <span class="kw">@Query</span>(<span class="kw">sort</span>: \\<span class="tp">GroceryItem</span>.<span class="kw">name</span>) <span class="kw">var</span> items: [<span class="tp">GroceryItem</span>]</div>
-        <div class="code-line"></div>
-        <div class="code-line">    <span class="kw">var</span> body: <span class="kw">some</span> <span class="pr">View</span> {</div>
-        <div class="code-line">        <span class="tp">NavigationStack</span> {</div>
-        <div class="code-line">            <span class="tp">List</span> {</div>
-        <div class="code-line">                <span class="kw">ForEach</span>(items) { item <span class="kw">in</span></div>
-        <div class="code-line">                    <span class="tp">GroceryRow</span>(item: item)</div>
-        <div class="code-line">                }</div>
-        <div class="code-line">            }</div>
-        <div class="code-line">            .<span class="kw">navigationTitle</span>(<span class="st">"Groceries"</span>)</div>
-        <div class="code-line">        }</div>
-        <div class="code-line">    }</div>
-        <div class="code-line">}</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="pricing">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Pricing</span>
-      <h2 class="section-title">Complete Template Package</h2>
-    </div>
-    <div class="pricing-card">
-      <div class="pricing-badge">Non-Custodial Crypto Payment</div>
-      <div class="pricing-price"><span>$</span>49<span> USD in USDC</span></div>
+        <div class="code-line"><span class="kw">@ModelActor</span></div>
+        <div class="code-line"><span class="kw">public actor</span> <span class="tp">GroceryDataActor</span> {</div>
+        <div class="code-line">    <span class="kw">public func</span> <span class="pr">fetchAllGroceryItems</span>() <span class="kw">async throws</span> -> [<span class="tp">GroceryItemDTO</span>] {</div>
+        <div class="code-line">        <span class="kw">let</span> descriptor = <span class="tp">FetchDescriptor</span>&lt;<span class="tp">GroceryItem</span>&gt;(</div>
+        <div class="code-line">            <span class="kw">sortBy</span>: [<span class="tp">SortDescriptor</span>(\\.<span class="kw">name</span>)]</div>
+        <div class="code-line">        )</div>
+        <div class="code-line">        <span class="kw">let</span> items = <span class="kw">try</span> modelContext.<span class="pr">fetch</span>(descriptor)</div>
+        <div class="code-line">        <span class="kw">return</span> items.<span class="pr">map</span> { <span class="tp">GroceryItemDTO</span>(<span class="kw">from</span>: <LaTex>id_2</LaTex></span>49<span> USD in USDC</span></div>
       <ul class="pricing-list">
         <li>@ModelActor Architecture (Zero UI Freeze)</li>
         <li>SwiftData Migration Guide included</li>
